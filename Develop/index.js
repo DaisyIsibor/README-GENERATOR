@@ -50,7 +50,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Choose a license for application:',
-        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3-Clause', 'None']
+        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3-Clause']
     },
 ];
 
@@ -82,3 +82,19 @@ function init() {
 
 // Function call to initialize app
 init();
+
+
+
+
+
+
+
+// Below are the license used and what it represents
+
+//MIT License: The MIT License is a permissive open-source license that allows users to do almost anything with the software, including modifying, distributing, sublicensing, and using it for commercial purposes, as long as the original copyright notice and license are included.
+
+// Apache License 2.0: The Apache License 2.0 is a permissive open-source license similar to the MIT License, but it also includes an express grant of patent rights from contributors to users. It permits users to modify, distribute, sublicense, and use the software for any purpose, including commercial purposes, as long as the original copyright notice and license are included and any significant modifications are documented.
+
+// GNU General Public License version 3 (GPLv3): The GPLv3 is a copyleft license that requires derivative works of the software to also be distributed under the same license terms. It guarantees users the freedom to use, modify, and distribute the software, but it also requires that any modified versions of the software be made available under the same license terms.
+
+// BSD 3-Clause License: The BSD 3-Clause License is a permissive open-source license that allows users to do almost anything with the software, including modifying, distributing, sublicensing, and using it for commercial purposes, as long as the original copyright notice and license are included. It also includes a disclaimer of liability
