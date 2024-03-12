@@ -50,7 +50,8 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Choose a license for application:',
-        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3-Clause']
+        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3-Clause'],
+        default: 'MIT' // Set default value to MIT
     },
 ];
 
@@ -58,17 +59,23 @@ const questions = [
 function writeToFile(README, data) {
     fs.writeFile(README, data, (err) => {
         if (err) {
-            console.error(err);
+            console.error('Error writing to file:', err); 
         } else {
             console.log(`${README} has been successfully generated`);
         }
     });
 }
 
+
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
+        // Validate the answers before generating README content
+        if (!answers.title || !answers.description || !answers.installation || !answers.usage || !answers.contributing || !answers.tests || !answers.githubUsername || !answers.email || !answers.license) {
+            console.error('Please provide answers to all questions.');
+            return;
+        }
         // Generate a README content based on user's answers
         const readmeContent = generateMarkdown(answers);
 
@@ -76,7 +83,7 @@ function init() {
         writeToFile('README.md', readmeContent);
     })
     .catch((error) => {
-        console.error(error);
+        console.error('Error initializing app:', error);
     });
 }
 

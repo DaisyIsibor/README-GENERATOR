@@ -30,11 +30,11 @@ function renderLicenseLink(license) {
   return licenseLinks[license] || '';
 }
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// If there is no license, return a message.
 function renderLicenseSection(license) {
   //using the IF condition for below.
   if (!license || license ==='None' ){
-    return '';
+    return 'No license selected.';
   }
   // this will display the license and license links
   return `## License
