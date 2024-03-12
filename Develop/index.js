@@ -12,39 +12,47 @@ const questions = [
     },
     {
         type:'input',
-        name:'Description',
-        message:'Please provide a brief description of the project'
+        name:'description',
+        message:'Please provide a brief description of the project',
+        when: (answers) => !answers.description // prompts back to answer when no answer is provided 
     },
 
     {
         type:'input',
         name:'Installation',
-        message:'Please enter the instructions to install'
+        message:'Please enter the instructions to install',
+        when: (answers) => !answers.installation // prompts back to answer when no answer is provided 
     },
     {
         type:'input',
         name:'Usage',
-        message:'please enter the usage information'
+        message:'please enter the usage information',
+        when: (answers) => !answers.usage //  prompts back to answer when usage answer is provided 
     },
     {
         type:'input',
         name:'contributing',
-        message:'Please enter guidelines to your contribution:'
+        message:'Please enter guidelines to your contribution:',
+        when: (answers) => !answers.contributing // prompt back to answer when contribution answer is not provided 
     },
     {
         type:'input',
         name:'Tests',
-        message:'Add test instructions'
+        message:'Add test instructions',
+        when: (answers) => !answers.tests // prompt back to answer when Tests answer is not provided 
     },
+    
     {
         type:'input',
         name:'githubUsername',
-        message:'Please enter you GitHub Username'
+        message:'Please enter you GitHub Username',
+        when: (answers) => !answers.githubUsername // prompt back to answer when github username answer is not provided 
     },
     {
         type:'input',
         name:'email',
-        message:'Please enter you email address here'
+        message:'Please enter you email address here',
+        when: (answers) => !answers.email // prompt back to answer when email answer is not provided 
     },
     {
         type: 'list',
@@ -71,11 +79,7 @@ function writeToFile(README, data) {
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        // Validate the answers before generating README content
-        if (!answers.title || !answers.description || !answers.installation || !answers.usage || !answers.contributing || !answers.tests || !answers.githubUsername || !answers.email || !answers.license) {
-            console.error('Please provide answers to all questions.');
-            return;
-        }
+        
         // Generate a README content based on user's answers
         const readmeContent = generateMarkdown(answers);
 
