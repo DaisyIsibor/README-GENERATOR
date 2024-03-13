@@ -45,41 +45,50 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
-  ${renderLicenseBadge(data.license)}
+  const githubUsername = data.githubUsername.replace(/\s/g, '');
+  // Ensure that each section is included only if the corresponding data is provided
+  let markdownContent = `# ${data.title}\n`;
 
-  ## Table of Contents
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  - [License](#license)
-  
-  ## Description
-  ${data.description}
-  
-  ## Installation
-  ${data.installation}
-  
-  ## Usage
-  ${data.usage}
-  
-  ## Contributing
-  ${data.contributing}
-  
-  ## Tests
-  ${data.tests}
-  
-  ## Questions
-  - **GitHub**: [${data.githubUsername}](https://github.com/${data.githubUsername})
-  - **Email**: ${data.email}
-  
-  ## License
-  ${renderLicenseSection(data.license)}
-  `;
+  // Render license badge if a valid license is selected
+  if (data.license) {
+      markdownContent += `${renderLicenseBadge(data.license)}\n\n`;
   }
+
+  // Table of Contents
+  markdownContent += `## Table of Contents\n`;
+  if (data.description) markdownContent += `- [Description](#description)\n`;
+  if (data.installation) markdownContent += `- [Installation](#installation)\n`;
+  if (data.usage) markdownContent += `- [Usage](#usage)\n`;
+  if (data.contributing) markdownContent += `- [Contributing](#contributing)\n`;
+  if (data.tests) markdownContent += `- [Tests](#tests)\n`;
+
+  // TODO: Check if license section should be included in the Table of Contents
+  if (data.license) markdownContent += `- [License](#license)\n\n`;
+
+  // Description
+  if (data.description) markdownContent += `## Description\n${data.description}\n\n`;
+
+  // Installation
+  if (data.installation) markdownContent += `## Installation\n${data.installation}\n\n`;
+
+  // Usage
+  if (data.usage) markdownContent += `## Usage\n${data.usage}\n\n`;
+
+  // Contributing
+  if (data.contributing) markdownContent += `## Contributing\n${data.contributing}\n\n`;
+
+  // Tests
+  if (data.tests) markdownContent += `## Tests\n${data.tests}\n\n`;
+
+  // Questions section
+  markdownContent += `## Questions\n`;
+  markdownContent += `- **GitHub**: [${data.githubUsername}](https://github.com/${data.githubUsername})\n`;
+  markdownContent += `- **Email**: ${data.email}\n\n`;
+
+  // License
+  if (data.license) markdownContent += renderLicenseSection(data.license);
+
+  return markdownContent;
+}
 
 module.exports = generateMarkdown;

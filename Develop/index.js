@@ -14,45 +14,45 @@ const questions = [
         type:'input',
         name:'description',
         message:'Please provide a brief description of the project',
-        when: (answers) => !answers.description // prompts back to answer when no answer is provided 
+        
     },
 
     {
         type:'input',
         name:'Installation',
         message:'Please enter the instructions to install',
-        when: (answers) => !answers.installation // prompts back to answer when no answer is provided 
+        
     },
     {
         type:'input',
         name:'Usage',
         message:'please enter the usage information',
-        when: (answers) => !answers.usage //  prompts back to answer when usage answer is provided 
+    
     },
     {
         type:'input',
         name:'contributing',
         message:'Please enter guidelines to your contribution:',
-        when: (answers) => !answers.contributing // prompt back to answer when contribution answer is not provided 
+       
     },
     {
         type:'input',
         name:'Tests',
         message:'Add test instructions',
-        when: (answers) => !answers.tests // prompt back to answer when Tests answer is not provided 
+       
     },
     
     {
         type:'input',
         name:'githubUsername',
         message:'Please enter you GitHub Username',
-        when: (answers) => !answers.githubUsername // prompt back to answer when github username answer is not provided 
+        
     },
     {
         type:'input',
         name:'email',
         message:'Please enter you email address here',
-        when: (answers) => !answers.email // prompt back to answer when email answer is not provided 
+       
     },
     {
         type: 'list',
@@ -62,6 +62,7 @@ const questions = [
         default: 'MIT' // Set default value to MIT
     },
 ];
+
 
 // TODO: Create a function to write README file
 function writeToFile(README, data) {
@@ -80,11 +81,13 @@ function init() {
     inquirer.prompt(questions)
     .then((answers) => {
         
+         
         // Generate a README content based on user's answers
         const readmeContent = generateMarkdown(answers);
 
         // Write README content to a file
         writeToFile('README.md', readmeContent);
+        
     })
     .catch((error) => {
         console.error('Error initializing app:', error);
