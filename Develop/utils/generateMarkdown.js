@@ -57,10 +57,10 @@ function generateMarkdown(data) {
   // Table of Contents
   markdownContent += `## Table of Contents\n`;
   if (data.description) markdownContent += `- [Description](#description)\n`;
-  if (data.installation) markdownContent += `- [Installation](#installation)\n`;
-  if (data.usage) markdownContent += `- [Usage](#usage)\n`;
+  if (data.Installation) markdownContent += `- [Installation](#Installation)\n`;
+  if (data.Usage) markdownContent += `- [Usage](#Usage)\n`;
   if (data.contributing) markdownContent += `- [Contributing](#contributing)\n`;
-  if (data.tests) markdownContent += `- [Tests](#tests)\n`;
+  if (data.Tests) markdownContent += `- [Tests](#Tests)\n`;
 
   // TODO: Check if license section should be included in the Table of Contents
   if (data.license) markdownContent += `- [License](#license)\n\n`;
@@ -69,16 +69,16 @@ function generateMarkdown(data) {
   if (data.description) markdownContent += `## Description\n${data.description}\n\n`;
 
   // Installation
-  if (data.installation) markdownContent += `## Installation\n${data.installation}\n\n`;
+  if (data.Installation) markdownContent += `## Installation\n${data.Installation}\n\n`;
 
   // Usage
-  if (data.usage) markdownContent += `## Usage\n${data.usage}\n\n`;
+  if (data.Usage) markdownContent += `## Usage\n${data.Usage}\n\n`;
 
   // Contributing
   if (data.contributing) markdownContent += `## Contributing\n${data.contributing}\n\n`;
 
   // Tests
-  if (data.tests) markdownContent += `## Tests\n${data.tests}\n\n`;
+  if (data.Tests) markdownContent += `## Tests\n${data.Tests}\n\n`;
 
   // Questions section
   markdownContent += `## Questions\n`;
