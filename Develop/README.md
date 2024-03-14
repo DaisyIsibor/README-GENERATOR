@@ -22,7 +22,7 @@ node index.jsFollow the prompts to input project details and generate your READM
 
 ## Usage
 The README Generator simplifies the process of creating comprehensive README files for projects. Follow these steps:
-Navigate to the project directory in your terminal.Run the README Generator:node index.jsProvide responses to each prompt accurately and thoroughly.Once all prompts are completed, the README Generator will automatically generate a well-structured README.md file.Review and make any additional modifications to the generated README.md file as needed. ![alt text](<../Images/terminal questionair 1.png>)  ![alt text](<../Images/Terminal questionair 2 .png>)
+Navigate to the project directory in your terminal.Run the README Generator:node index.jsProvide responses to each prompt accurately and thoroughly.Once all prompts are completed, the README Generator will automatically generate a well-structured README.md file.Review and make any additional modifications to the generated README.md file as needed. ![alt text](<terminal questionair 1.png>)  ![alt text](<../Images/Terminal questionair 2 .png>)
 
 ## Contributing
 Contributions to the README Generator are welcome! Here's how you can contribute:Fork the repository to your GitHub account.Clone the forked repository to your local machine.
