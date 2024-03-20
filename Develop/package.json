@@ -1,12 +1,12 @@
 {
-  "name": "static-site",
+  "name": "README-Generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js command-line application to generate a README file using inquirer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
-  "author": "",
+  "author": "Daisy",
   "license": "ISC",
   "dependencies": {
     "inquirer": "8.2.4"
