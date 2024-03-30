@@ -2,7 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-purple.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Walk through Video
- https://drive.google.com/file/d/1GspOghRdgRdffatKAtfvKgOEUROQBR9F/view?usp=sharing
+https://app.screencastify.com/v3/watch/BXoUfJ7IKEv3ZgKXH5aV
  
 
 ## Table of Contents
